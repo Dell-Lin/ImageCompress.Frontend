@@ -10,7 +10,8 @@
           "inlineTemplate": true,
           "inlineStyle": true,
           "skipTests": true,
-          "standalone": true
+          "standalone": true,
+          "flat": true
         },
         "@schematics/angular:class": {
           "skipTests": true
@@ -55,6 +56,8 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -96,7 +99,11 @@
               "browserTarget": "ImageCompress.Frontend:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "browserTarget": "ImageCompress.Frontend:build:build",
+            "proxyConfig": "src/proxy.conf.json"
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
